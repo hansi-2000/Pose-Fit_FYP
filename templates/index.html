@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Trainer</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- 3D Model Viewer -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    .avatar-container {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+    }
+    model-viewer {
+      width: 100%;
+      height: 400px;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Fitness Trainer</h1>
+      <p>AI-powered exercise tracking and feedback</p>
+
+      <!-- Navbar -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/index" class="nav-link {% if request.path == '/index' %}active{% endif %}">Home</a></li>
+          <li><a href="/dashboard" class="nav-link {% if request.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <!-- Live Video Feed -->
+      <div class="video-container">
+        <img id="video" src="{{ url_for('video_feed') }}" alt="Fitness Tracker Video Feed">
+      </div>
+
+      <div class="avatar-container">
+        <h2>Exercise Avatar</h2>
+        <div class="avatar-buttons">
+          <button class="btn primary-btn" onclick="loadAvatar('Air Squat.glb')">Squat</button>
+          <button class="btn primary-btn" onclick="loadAvatar('Push Up.glb')">Push Up</button>
+          <button class="btn primary-btn" onclick="loadAvatar('Bicep Curl.glb')">Hammer Curl</button>
+        </div>
+
+        <!-- Avatar model viewer, initially hidden -->
+        <model-viewer id="avatar-model"
+                      style="display: none;"
+                      alt="3D Avatar"
+                      autoplay
+                      camera-controls
+                      interaction-prompt="none"
+                      loop>
+        </model-viewer>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <!-- Exercise Selection -->
+        <div class="exercise-selection">
+          <h2>Select Exercise</h2>
+          <div class="exercise-options">
+            <div class="exercise-option" data-exercise="squat">
+              <img src="{{ url_for('static', filename='images/squat.png') }}" alt="Squat">
+              <h3>Squat</h3>
+            </div>
+            <div class="exercise-option" data-exercise="push_up">
+              <img src="{{ url_for('static', filename='images/push_up.png') }}" alt="Push Up">
+              <h3>Push Up</h3>
+            </div>
+            <div class="exercise-option" data-exercise="hammer_curl">
+              <img src="{{ url_for('static', filename='images/hammer_curl.png') }}" alt="Hammer Curl">
+              <h3>Hammer Curl</h3>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Workout Configuration -->
+        <div class="exercise-config">
+          <h2>Configure Workout</h2>
+          <div class="config-inputs">
+            <div class="input-group">
+              <label for="sets">Sets:</label>
+              <input type="number" id="sets" min="1" max="10" value="3">
+            </div>
+            <div class="input-group">
+              <label for="reps">Repetitions:</label>
+              <input type="number" id="reps" min="1" max="30" value="10">
+            </div>
+          </div>
+        </div>
+
+        <!-- Start/Stop Buttons -->
+        <div class="action-buttons">
+          <button id="start-btn" class="btn primary-btn">Start Workout</button>
+          <button id="stop-btn" class="btn secondary-btn" disabled>Stop Workout</button>
+        </div>
+
+        <!-- Workout Status -->
+        <div class="workout-status">
+          <h2>Current Status</h2>
+          <div class="status-display">
+            <div class="status-item">
+              <span class="status-label">Exercise:</span>
+              <span id="current-exercise" class="status-value">None</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Set:</span>
+              <span id="current-set" class="status-value">0 / 0</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Repetitions:</span>
+              <span id="current-reps" class="status-value">0 / 0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+  function loadAvatar(filename) {
+    const modelViewer = document.getElementById('avatar-model');
+    modelViewer.src = `/static/models/${filename}`;
+    modelViewer.style.display = 'block';
+  }
+</script>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-image: url("/static/images/background.jpg"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,8 +28,6 @@
                 <ul>
                     <li><a href="/index" class="nav-link">Home</a></li>
                     <li><a href="/dashboard" class="nav-link active">Dashboard</a></li>
-                    <!-- <li><a href="/profile" class="nav-link">Profile</a></li>
-                    <li><a href="/avatar" class="nav-link">3D Avatar</a></li> -->
 
                 </ul>
             </nav>

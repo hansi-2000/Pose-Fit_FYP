@@ -9,13 +9,10 @@ privacy. The frontend of the application is built using React.js, while backend 
 user data, progress tracking, and community features using Node.js and MongoDB.
 PoseFit addresses several important needs in the fitness domain:
 
-It lowers the barrier to entry by being browser-based and free from expensive equipment requirements.
-
-It increases safety and effectiveness by giving real-time feedback and alerts when incorrect posture is detected.
-
-It enhances motivation through community engagement tools such as leader-boards and challenges.
-
-It supports a variety of exercises including squats, lunges, push-ups, jumping jacks, and dumbbell curls.
+* It lowers the barrier to entry by being browser-based and free from expensive equipment requirements.
+* It increases safety and effectiveness by giving real-time feedback and alerts when incorrect posture is detected.
+* It enhances motivation through community engagement tools such as leader-boards and challenges.
+* It supports a variety of exercises including squats, lunges, push-ups, jumping jacks, and dumbbell curls.
 
 Below is the demonstration video: 
 

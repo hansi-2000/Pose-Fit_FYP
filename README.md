@@ -1,12 +1,7 @@
 # Pose-Fit_FYP
 The fitness industry has undergone a significant digital transformation due to technological advancements and changing consumer needs. However, maintaining a healthy lifestyle remains challenging due to factors like time, limited access to fitness centers, transportation issues, and high gym membership costs. The global pandemic has emphasized the importance of home-based fitness solutions, but most current solutions lack real-time posture correction or personalized feedback, leading to ineffective exercise routines and increased injury risk. PoseFit, a web-based fitness assistant, combines machine learning, computer vision, and real-time pose estimation to provide real-time feedback, posture correction, and motivation.
 
-PoseFit uses advanced machine learning models such as MoveNet from TensorFlow.js to
-detect 17 key body landmarks (shoulders, hips, knees) in real-time. Unlike conventional fitness
-apps, PoseFit emphasizes privacy-first architecture by running all processing directly in the
-browser. This ensures that video feeds are never transmitted or stored, maintaining user data
-privacy. The frontend of the application is built using React.js, while backend services manage
-user data, progress tracking, and community features using Node.js and MongoDB.
+PoseFit evaluate 2D poses of exercises using advanced NN classification models and base machine learning models as MoveNet from TensorFlow.js to detect 17 key body landmarks (shoulders, hips, knees) in real-time. Unlike conventional fitness apps, PoseFit emphasizes privacy-first architecture by running all processing directly in the browser. This ensures that video feeds are never transmitted or stored, maintaining user data privacy. The frontend of the application is built using web packs and plain JS with HTML and Tailwind CSS, while backend services manage user data, progress tracking, and community features using Node.js and MongoDB.
 PoseFit addresses several important needs in the fitness domain:
 
 * It lowers the barrier to entry by being browser-based and free from expensive equipment requirements.

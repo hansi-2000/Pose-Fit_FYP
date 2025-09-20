@@ -14,9 +14,13 @@ PoseFit addresses several important needs in the fitness domain:
 * It enhances motivation through community engagement tools such as leader-boards and challenges.
 * It supports a variety of exercises including squats, lunges, push-ups, jumping jacks, and dumbbell curls.
 
+Below is the demonstration video: 
+https://drive.google.com/file/d/1MkOf6KBNRdk7i-mw9fdhfKMawhqygJTH/view?usp=sharing 
+
+
 Below is the Architectural design:
+
 <img width="1163" height="829" alt="image" src="https://github.com/user-attachments/assets/95257c0a-f2e7-4b69-b36a-48b311d7c92a" />
 
 
-Below is the demonstration video: 
-https://drive.google.com/file/d/1MkOf6KBNRdk7i-mw9fdhfKMawhqygJTH/view?usp=sharing 
+

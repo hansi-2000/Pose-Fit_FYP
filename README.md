@@ -1,4 +1,4 @@
-![archi](https://github.com/user-attachments/assets/48581ac2-ee2d-4623-a78b-fd0a4231f7f9)# Pose-Fit_FYP
+# Pose-Fit_FYP
 The fitness industry has undergone a significant digital transformation due to technological advancements and changing consumer needs. However, maintaining a healthy lifestyle remains challenging due to factors like time, limited access to fitness centers, transportation issues, and high gym membership costs. The global pandemic has emphasized the importance of home-based fitness solutions, but most current solutions lack real-time posture correction or personalized feedback, leading to ineffective exercise routines and increased injury risk. PoseFit, a web-based fitness assistant, combines machine learning, computer vision, and real-time pose estimation to provide real-time feedback, posture correction, and motivation.
 
 PoseFit uses advanced machine learning models such as MoveNet from TensorFlow.js to
